@@ -11,7 +11,7 @@ namespace CustomListClass
         static void Main(string[] args)
         {
             CustomList<int> customList = new CustomList<int>();
-            customList.RunProgram();
+            customList.Add(4);
             Console.ReadLine();
 
             List<int> numbers = new List<int>();

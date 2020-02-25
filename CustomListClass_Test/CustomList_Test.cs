@@ -7,101 +7,209 @@ namespace CustomListClass_Test
     [TestClass]
     public class CustomList_Test
     {
+        //BELOW ARE MY +OPERATOR VARIABLES
+        [TestMethod]
+        public void Two3IntListsAdded_Index0Returns1stValueofOldList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            int expected = 1;
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 + customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3[0]);
+        }
+        [TestMethod]
+        public void Two3IntListsAdded_Index3Returns1stValueofOldList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            int expected = 2;
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 + customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3[3]);
+        }
+        [TestMethod]
+        public void Two3IntListsAdded_NewListCountReturns6()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            int expected = 6;
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 + customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.Count);
+        }
+        [TestMethod]
+        public void Two4IntListsAdded_MaxCapacityReturn8()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            int expected = 6;
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 + customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.Count);
+        }
+        [TestMethod]
+        public void Two4IntListsAdded_MaxCapacityReturn16()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            int expected = 16;
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList1.Add(7);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            customList2.Add(8);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 + customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.Count);
+        }
         //BELOW ARE MY TOSTRING VARIABLES
-        [TestMethod]
-        public void ToString_TwoIntsToList_RetunsConcatenatedString()
-        {
-            //Arrange
-            CustomList<int> customList = new CustomList<int>();
-            string expected = "711";
+        //[TestMethod]
+        //public void ToString_TwoIntsToList_RetunsConcatenatedString()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    string expected = "711";
 
-            //Act
-            customList.Add(7);
-            customList.Add(11);
+        //    //Act
+        //    customList.Add(7);
+        //    customList.Add(11);
 
-            //Assert
-            Assert.AreEqual(expected, customList.ToString());
-        }
-        [TestMethod]
-        public void ToString_5StringsToList_ReturnsConcatenatedString()
-        {
-            //Arrange
-            CustomList<string> customList = new CustomList<string>();
-            string firstItem = "d";
-            string secondItem = "a";
-            string thirdItem = "v";
-            string fourthItem = "i";
-            string fithItem = "d";
-            string expected = "david";
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.ToString());
+        //}
+        //[TestMethod]
+        //public void ToString_5StringsToList_ReturnsConcatenatedString()
+        //{
+        //    //Arrange
+        //    CustomList<string> customList = new CustomList<string>();
+        //    string firstItem = "d";
+        //    string secondItem = "a";
+        //    string thirdItem = "v";
+        //    string fourthItem = "i";
+        //    string fithItem = "d";
+        //    string expected = "david";
 
-            //Act
-            customList.Add(firstItem);
-            customList.Add(secondItem);
-            customList.Add(thirdItem);
-            customList.Add(fourthItem);
-            customList.Add(fithItem);
+        //    //Act
+        //    customList.Add(firstItem);
+        //    customList.Add(secondItem);
+        //    customList.Add(thirdItem);
+        //    customList.Add(fourthItem);
+        //    customList.Add(fithItem);
 
-            //Assert
-            Assert.AreEqual(expected, customList.ToString());
-        }
-        [TestMethod]
-        public void ToString_ThreeIntsToList_ReturnsConcatenatedString()
-        {
-            //Arrange
-            CustomList<int> customList = new CustomList<int>();
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.ToString());
+        //}
+        //[TestMethod]
+        //public void ToString_ThreeIntsToList_ReturnsConcatenatedString()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
 
-            string expected = "736";
+        //    string expected = "736";
 
-            //Act
-            customList.Add(7);
-            customList.Add(3);
-            customList.Add(6);
+        //    //Act
+        //    customList.Add(7);
+        //    customList.Add(3);
+        //    customList.Add(6);
 
-            //Assert
-            Assert.AreEqual(expected, customList.ToString());
-        }
-        [TestMethod]
-        public void ToString_SevenIntsToList_ReturnsConcatenatedString()
-        {
-            //Arrange
-            CustomList<int> customList = new CustomList<int>();
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.ToString());
+        //}
+        //[TestMethod]
+        //public void ToString_SevenIntsToList_ReturnsConcatenatedString()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
 
-            string expected = "8675309";
+        //    string expected = "8675309";
 
-            //Act
-            customList.Add(8);
-            customList.Add(6);
-            customList.Add(7);
-            customList.Add(5);
-            customList.Add(3);
-            customList.Add(0);
-            customList.Add(9);
+        //    //Act
+        //    customList.Add(8);
+        //    customList.Add(6);
+        //    customList.Add(7);
+        //    customList.Add(5);
+        //    customList.Add(3);
+        //    customList.Add(0);
+        //    customList.Add(9);
 
-            //Assert
-            Assert.AreEqual(expected, customList.ToString());
-        }
-        [TestMethod]
-        public void ToString_TenIntsToList_ReturnsConcatenatedString()
-        {
-            //Arrange
-            CustomList<int> customList = new CustomList<int>();
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.ToString());
+        //}
+        //[TestMethod]
+        //public void ToString_TenIntsToList_ReturnsConcatenatedString()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
 
-            string expected = "2813308004";
+        //    string expected = "2813308004";
 
-            //Act
-            customList.Add(2);
-            customList.Add(8);
-            customList.Add(1);
-            customList.Add(3);
-            customList.Add(3);
-            customList.Add(0);
-            customList.Add(8);
-            customList.Add(0);
-            customList.Add(0);
-            customList.Add(4);
-            //Assert
-            Assert.AreEqual(expected, customList.ToString());
-        }
+        //    //Act
+        //    customList.Add(2);
+        //    customList.Add(8);
+        //    customList.Add(1);
+        //    customList.Add(3);
+        //    customList.Add(3);
+        //    customList.Add(0);
+        //    customList.Add(8);
+        //    customList.Add(0);
+        //    customList.Add(0);
+        //    customList.Add(4);
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.ToString());
+        //}
 
         //Below are all of my Remove Test Methods
         //[TestMethod]

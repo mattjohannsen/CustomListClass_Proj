@@ -159,22 +159,22 @@ namespace CustomListClass_Test
             Assert.AreEqual(expected, customList.Capacity);
 
         }
-        //[TestMethod]
-        //public void Add_TwoValues_MaxCapacityEquals4()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int numberOne = 4;
-        //    int numberTwo = 3;
-        //    int expected = 4;
+        [TestMethod]
+        public void Add_TwoValues_MaxCapacityEquals4()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int numberOne = 4;
+            int numberTwo = 3;
+            int expected = 4;
 
-        //    //Act
-        //    customList.Add(numberOne);
-        //    customList.Add(numberTwo);
+            //Act
+            customList.Add(numberOne);
+            customList.Add(numberTwo);
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Capacity);
-        //}
+            //Assert
+            Assert.AreEqual(expected, customList.Capacity);
+        }
         [TestMethod]
         public void Add_ThreeValues_MaxCapacityEquals4()
         {
@@ -266,27 +266,28 @@ namespace CustomListClass_Test
             //Assert
             Assert.AreEqual(expected, customList.Capacity);
         }
-        //public void Add_FiveValues_CountEquals5()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int numberOne = 4;
-        //    int numberTwo = 3;
-        //    int numberThree = 5;
-        //    int numberFour = 1;
-        //    int numberFive = 2;
-        //    int expected = 5;
+        [TestMethod]
+        public void Add_FiveValues_CountEquals5()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int numberOne = 4;
+            int numberTwo = 3;
+            int numberThree = 5;
+            int numberFour = 1;
+            int numberFive = 2;
+            int expected = 5;
 
-        //    //Act
-        //    customList.Add(numberOne);
-        //    customList.Add(numberTwo);
-        //    customList.Add(numberThree);
-        //    customList.Add(numberFour);
-        //    customList.Add(numberFive);
+            //Act
+            customList.Add(numberOne);
+            customList.Add(numberTwo);
+            customList.Add(numberThree);
+            customList.Add(numberFour);
+            customList.Add(numberFive);
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Count);
-        //}
+            //Assert
+            Assert.AreEqual(expected, customList.Count);
+        }
         //[TestMethod]
         //public void Remove_OneValueToList_CountDecrement()
         //{

@@ -66,8 +66,8 @@ namespace CustomListClass
             }
             //increment count - CHECK!!!
             //item needs to land at next available index -CHECK!
-            //check to make sure it persists
-            //count == maxcapacity, we need to increase capacity and copy
+            //check to make sure it persists CHECK!
+            //count == maxcapacity, we need to increase capacity and copy - CHECK!
         }
         private void IncreaseMaxCapacity()
         {

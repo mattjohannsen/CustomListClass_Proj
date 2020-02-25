@@ -7,6 +7,139 @@ namespace CustomListClass_Test
     [TestClass]
     public class CustomList_Test
     {
+        //[TestMethod]
+        //public void Remove_OneValueToList_CountDecrement()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    int expected = 0;
+
+        //    //Act
+        //    customList.Add(7);
+        //    customList.Remove(7);
+
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.Count);
+        //}
+        //[TestMethod]
+        //public void Remove_Index1FromTwoValueList_ExistsAtIndex0()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    int numberOne = 3;
+        //    int numberTwo = 7;
+        //    int expected = 3;
+
+        //    //Act
+        //    customList.Add(numberOne);
+        //    customList.Add(numberTwo);
+        //    customList.Remove(numberTwo);
+
+        //    //Assert
+        //    Assert.AreEqual(expected, customList[0]);
+        //}
+        //[TestMethod]
+        //public void Remove_3from4valueList_RemaingValueShouldExistatIndex0()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    int numberOne = 4;
+        //    int numberTwo = 3;
+        //    int numberThree = 5;
+        //    int numberFour = 1;
+        //    int expected = 1;
+
+        //    //Act
+        //    customList.Add(numberOne);
+        //    customList.Add(numberTwo);
+        //    customList.Add(numberThree);
+        //    customList.Add(numberFour);
+        //    customList.Remove(numberOne);
+        //    customList.Remove(numberTwo);
+        //    customList.Remove(numberThree);
+
+        //    //Assert
+        //    Assert.AreEqual(expected, customList[0]);
+        //}
+        //[TestMethod]
+        //public void Remove_OneValueFrom4ValueList_MaxCapacityEquals4()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    int numberOne = 4;
+        //    int numberTwo = 3;
+        //    int numberThree = 5;
+        //    int numberFour = 1;
+        //    int expected = 8;
+
+        //    //Act
+        //    customList.Add(numberOne);
+        //    customList.Add(numberTwo);
+        //    customList.Add(numberThree);
+        //    customList.Add(numberFour);
+        //    customList.Remove(numberFour);
+
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.Capacity);
+        //}
+        //[TestMethod]
+        //public void Remove_OneValueFrom8ValueList_MaxCapacityEquals8()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    int numberOne = 4;
+        //    int numberTwo = 3;
+        //    int numberThree = 5;
+        //    int numberFour = 1;
+        //    int numberFive = 11;
+        //    int numberSix = 6;
+        //    int numberSeven = 10;
+        //    int numberEight = 8;
+        //    int expected = 16;
+
+        //    //Act
+        //    customList.Add(numberOne);
+        //    customList.Add(numberTwo);
+        //    customList.Add(numberThree);
+        //    customList.Add(numberFour);
+        //    customList.Add(numberFive);
+        //    customList.Add(numberSix);
+        //    customList.Add(numberSeven);
+        //    customList.Add(numberEight);
+        //    customList.Remove(numberEight);
+
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.Capacity);
+        //}
+        //[TestMethod]
+        //public void Remove_OneValueFrom8ValueList_MaxCapacityEquals8()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    int numberOne = 4;
+        //    int numberTwo = 3;
+        //    int numberThree = 5;
+        //    int numberFour = 1;
+        //    int numberFive = 4;
+        //    int numberSix = 2;
+        //    int numberSeven = 4;
+        //    int expected = 4;
+
+        //    //Act
+        //    customList.Add(numberOne);
+        //    customList.Add(numberTwo);
+        //    customList.Add(numberThree);
+        //    customList.Add(numberFour);
+        //    customList.Add(numberFive);
+        //    customList.Add(numberSix);
+        //    customList.Add(numberSeven);
+        //    customList.Remove(numberOne);
+
+        //    //Assert
+        //    Assert.AreEqual(expected, customList[3]);
+        //}
+
+        //These are my Add method Testing Methods
         [TestMethod]
         public void Add_OneValueToList_CountIncrement()
         {
@@ -288,19 +421,6 @@ namespace CustomListClass_Test
             //Assert
             Assert.AreEqual(expected, customList.Count);
         }
-        //[TestMethod]
-        //public void Remove_OneValueToList_CountDecrement()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int expected = 0;
 
-        //    //Act
-        //    customList.Add(7);
-        //    customList.Remove(7);
-
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Count);
-        //}
     }
 }

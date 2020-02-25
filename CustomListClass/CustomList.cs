@@ -45,16 +45,59 @@ namespace CustomListClass
         //constructor  
         public CustomList()
         {
-            theArray = new T[4];
             capacity = 4;
+            theArray = new T[capacity];
+
         }
         //Overloading method for setting up new Array with different Max capacity
-        public CustomList(int length)
+        //public CustomList(int length)
+        //{
+        //    capacity = length;
+        //    theArray = new T[capacity];
+        //}
+        public void Remove(T itemToRemove)
         {
-            theArray = new T[length];
+            int itemIndex=0;
+            //Loop through values and find where the item exists in Array
+            for (int i = 0; i < count; i++)
+            {
+                if (Compare(itemToRemove, theArray[i]))
+                {
+                    itemIndex = i;
+                    break;
+                }
+                else
+                {
+                    //The value isn't found
+                    itemIndex = 0;
+                }
+            }
+            T[] tempArray = new T[capacity];
+            for (int i = 0; i < count; i++)
+            {
+                if (i < itemIndex)
+                {
+                    tempArray[i] = theArray[i];
+                }
+                else
+                {
+                    tempArray[i] = theArray[i+1];
+                }
+            }
+            count--;
+            theArray = tempArray;
         }
-
-
+        public bool Compare(T firstValue, T secondValue)
+        {
+            if (firstValue.Equals(secondValue))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Add(T itemToAdd)
         {
             theArray[count] = itemToAdd;
@@ -71,15 +114,13 @@ namespace CustomListClass
         }
         private void IncreaseMaxCapacity()
         {
-            int newCount;
-            newCount = (count * 2);
-            T[] tempArray = new T[newCount];
+            capacity = (capacity * 2);
+            T[] tempArray = new T[capacity];
             // Loop through array and assign values
             for (int i = 0; i < (count); i++)
             {
                 tempArray[i] = theArray[i];
             }
-            capacity = newCount;
             theArray = tempArray;
         }
 

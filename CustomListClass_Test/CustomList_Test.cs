@@ -7,20 +7,20 @@ namespace CustomListClass_Test
     [TestClass]
     public class CustomList_Test
     {
-        //[TestMethod]
-        //public void Remove_OneValueToList_CountDecrement()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int expected = 0;
+        [TestMethod]
+        public void Remove_OneValueToList_CountDecrement()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int expected = 0;
 
-        //    //Act
-        //    customList.Add(7);
-        //    customList.Remove(7);
+            //Act
+            customList.Add(7);
+            customList.Remove(7);
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Count);
-        //}
+            //Assert
+            Assert.AreEqual(expected, customList.Count);
+        }
         //[TestMethod]
         //public void Remove_Index1FromTwoValueList_ExistsAtIndex0()
         //{

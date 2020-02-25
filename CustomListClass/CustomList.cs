@@ -55,6 +55,22 @@ namespace CustomListClass
         //    capacity = length;
         //    theArray = new T[capacity];
         //}
+        public override string ToString()
+        {
+            string returnString = "";
+            for (int i = 0; i < count; i++)
+            {
+                if (i == 0)
+                {
+                    returnString = theArray[i].ToString();
+                }
+                else
+                {
+                    returnString = returnString + theArray[i].ToString();
+                }
+            }
+            return returnString;
+        }
         public void Remove(T itemToRemove)
         {
             int itemIndex = 0;

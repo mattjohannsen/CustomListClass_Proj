@@ -34,19 +34,21 @@ namespace CustomListClass_Test
         //    //Assert
         //    Assert.AreEqual(expected, customList.Count);
         //}
-        //[TestMethod]
-        //public void Add_OneValueToList_ExistsAtIndex0()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int expected = 14;
+        [TestMethod]
+        public void Add_OneValueToList_ExistsAtIndex0()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int[] theArray = new int[4];
+            int firstNumber = 14;
+            int expected = 14;
 
-        //    //Act
-        //    customList.Add(expected);
+            //Act
+            theArray[0] = firstNumber;
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList[0]);
-        //}
+            //Assert
+            Assert.AreEqual(expected, theArray[0]);
+        }
         //public void Add_TwoValuesToList_ListCountEquals2()
         //{
         //    //Arrange

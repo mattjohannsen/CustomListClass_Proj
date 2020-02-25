@@ -12,9 +12,10 @@ namespace CustomListClass
         {
             CustomList<int> customList = new CustomList<int>();
             customList.Add(4);
+            customList.Add(7);
             Console.ReadLine();
 
-            List<int> numbers = new List<int>();
+            //List<int> numbers = new List<int>();
             //numbers.Add(2);
             //numbers.Add(4);
             //numbers.Add(6);

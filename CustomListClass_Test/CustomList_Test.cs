@@ -80,6 +80,28 @@ namespace CustomListClass_Test
             //Assert
             Assert.AreEqual(expected, customList.ToString());
         }
+        [TestMethod]
+        public void ToString_TenIntsToList_ReturnsConcatenatedString()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+
+            string expected = "2813308004";
+
+            //Act
+            customList.Add(2);
+            customList.Add(8);
+            customList.Add(1);
+            customList.Add(3);
+            customList.Add(3);
+            customList.Add(0);
+            customList.Add(8);
+            customList.Add(0);
+            customList.Add(0);
+            customList.Add(4);
+            //Assert
+            Assert.AreEqual(expected, customList.ToString());
+        }
 
         //Below are all of my Remove Test Methods
         //[TestMethod]

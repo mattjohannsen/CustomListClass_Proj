@@ -58,16 +58,32 @@ namespace CustomListClass
         public override string ToString()
         {
             string returnString = "";
+            //for (int i = 0; i < count; i++)
+            //{
+            //    if (i == 0)
+            //    {
+            //        returnString = theArray[i].ToString();
+            //    }
+            //    else
+            //    {
+            //        returnString = returnString + theArray[i].ToString();
+            //    }
+            //}
+            //return returnString;
+            //BELOW IS THE START OF PERFECT CODE
+            //string returnString = "";
+            //for (int i = 0; i < count; i++)
+            //{
+            //    returnString += theArray[i].ToString();
+            //}
+            //return returnString;
+            //ABOVE IS THE END OF PERFECT CODE
+            StringBuilder builder = new StringBuilder();
             for (int i = 0; i < count; i++)
             {
-                if (i == 0)
-                {
-                    returnString = theArray[i].ToString();
-                }
-                else
-                {
-                    returnString = returnString + theArray[i].ToString();
-                }
+
+                builder.Append(theArray[i].ToString());
+                returnString = builder.ToString();
             }
             return returnString;
         }

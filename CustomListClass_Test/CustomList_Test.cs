@@ -214,58 +214,58 @@ namespace CustomListClass_Test
             //Assert
             Assert.AreEqual(expected, customList.Capacity);
         }
-        //[TestMethod]
-        //public void Add_FiveValues_MaxCapacityEquals8()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int numberOne = 4;
-        //    int numberTwo = 3;
-        //    int numberThree = 5;
-        //    int numberFour = 1;
-        //    int numberFive = 11;
-        //    int expected = 8;
+        [TestMethod]
+        public void Add_FiveValues_MaxCapacityEquals8()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int numberOne = 4;
+            int numberTwo = 3;
+            int numberThree = 5;
+            int numberFour = 1;
+            int numberFive = 11;
+            int expected = 8;
 
-        //    //Act
-        //    customList.Add(numberOne);
-        //    customList.Add(numberTwo);
-        //    customList.Add(numberThree);
-        //    customList.Add(numberFour);
-        //    customList.Add(numberFive);
+            //Act
+            customList.Add(numberOne);
+            customList.Add(numberTwo);
+            customList.Add(numberThree);
+            customList.Add(numberFour);
+            customList.Add(numberFive);
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Capacity);
-        //}
-        //[TestMethod]
-        //public void Add_NineValues_MaxCapacityEquals16()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int numberOne = 4;
-        //    int numberTwo = 3;
-        //    int numberThree = 5;
-        //    int numberFour = 1;
-        //    int numberFive = 11;
-        //    int numberSix = 6;
-        //    int numberSeven = 10;
-        //    int numberEight = 8;
-        //    int numberNine = 2;
-        //    int expected = 16;
+            //Assert
+            Assert.AreEqual(expected, customList.Capacity);
+        }
+        [TestMethod]
+        public void Add_NineValues_MaxCapacityEquals16()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int numberOne = 4;
+            int numberTwo = 3;
+            int numberThree = 5;
+            int numberFour = 1;
+            int numberFive = 11;
+            int numberSix = 6;
+            int numberSeven = 10;
+            int numberEight = 8;
+            int numberNine = 2;
+            int expected = 16;
 
-        //    //Act
-        //    customList.Add(numberOne);
-        //    customList.Add(numberTwo);
-        //    customList.Add(numberThree);
-        //    customList.Add(numberFour);
-        //    customList.Add(numberFive);
-        //    customList.Add(numberSix);
-        //    customList.Add(numberSeven);
-        //    customList.Add(numberEight);
-        //    customList.Add(numberNine);
+            //Act
+            customList.Add(numberOne);
+            customList.Add(numberTwo);
+            customList.Add(numberThree);
+            customList.Add(numberFour);
+            customList.Add(numberFive);
+            customList.Add(numberSix);
+            customList.Add(numberSeven);
+            customList.Add(numberEight);
+            customList.Add(numberNine);
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Capacity);
-        //}
+            //Assert
+            Assert.AreEqual(expected, customList.Capacity);
+        }
         //public void Add_FiveValues_CountEquals5()
         //{
         //    //Arrange

@@ -175,25 +175,25 @@ namespace CustomListClass_Test
         //    //Assert
         //    Assert.AreEqual(expected, customList.Capacity);
         //}
-        //[TestMethod]
-        //public void Add_ThreeValues_MaxCapacityEquals4()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int numberOne = 4;
-        //    int numberTwo = 3;
-        //    int numberThree = 5;
-        //    int expected = 4;
+        [TestMethod]
+        public void Add_ThreeValues_MaxCapacityEquals4()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int numberOne = 4;
+            int numberTwo = 3;
+            int numberThree = 5;
+            int expected = 4;
 
-        //    //Act
-        //    customList.Add(numberOne);
-        //    customList.Add(numberTwo);
-        //    customList.Add(numberThree);
+            //Act
+            customList.Add(numberOne);
+            customList.Add(numberTwo);
+            customList.Add(numberThree);
 
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Capacity);
-        //}
+            //Assert
+            Assert.AreEqual(expected, customList.Capacity);
+        }
         //[TestMethod]
         //public void Add_FourValues_MaxCapacityEquals4()
         //{

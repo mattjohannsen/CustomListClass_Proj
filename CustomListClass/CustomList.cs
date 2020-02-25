@@ -51,12 +51,16 @@ namespace CustomListClass
 
             //increment count - CHECK!!!
 
-            //item needs to land at next available index
+            //item needs to land at next available index -CHECK!
 
 
             //check to make sure it persists
 
             //count == maxcapacity, we need to increase capacity and copy
+        }
+        public void CheckArrayLength()
+        {
+
         }
 
     }

@@ -16,6 +16,7 @@ namespace CustomListClass
             int intCheck2 = customList.Count;
             customList.Add(7);
             int intCheck3 = customList.Count;
+            customList.Add(7);
             Console.ReadLine();
 
             List<int> numbers = new List<int>();

@@ -104,26 +104,26 @@ namespace CustomListClass_Test
             //Assert
             Assert.AreEqual(expected, customList[2]);
         }
-        //[TestMethod]
-        //public void Add_FourValuesToList_ListCountEquals4()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int expected = 4;
-        //    int numberOne = 4;
-        //    int numberTwo = 3;
-        //    int numberThree = 5;
-        //    int numberFour = 1;
+        [TestMethod]
+        public void Add_FourValuesToList_ListCountEquals4()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int expected = 4;
+            int numberOne = 4;
+            int numberTwo = 3;
+            int numberThree = 5;
+            int numberFour = 1;
 
-        //    //Act
-        //    customList.Add(numberOne);
-        //    customList.Add(numberTwo);
-        //    customList.Add(numberThree);
-        //    customList.Add(numberFour);
+            //Act
+            customList.Add(numberOne);
+            customList.Add(numberTwo);
+            customList.Add(numberThree);
+            customList.Add(numberFour);
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Count);
-        //}
+            //Assert
+            Assert.AreEqual(expected, customList.Count);
+        }
         //[TestMethod]
         //public void Add_FourValuesToList_4thValueGoesInAtIndex3()
         //{

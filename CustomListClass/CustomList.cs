@@ -64,20 +64,20 @@ namespace CustomListClass
             if (isItemFound == true)
             {
                 itemIndex = GetIndexOfItemToRemove(itemToRemove);
-                CreateNewArray(itemIndex);
+                CreateNewArrayForRemove(itemIndex);
             }
         }
-        public bool Compare(T firstValue, T secondValue)
-        {
-            if (firstValue.Equals(secondValue))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //public bool Compare(T firstValue, T secondValue)
+        //{
+        //    if (firstValue.Equals(secondValue))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
         public void Add(T itemToAdd)
         {
             theArray[count] = itemToAdd;
@@ -96,7 +96,6 @@ namespace CustomListClass
         {
             capacity = (capacity * 2);
             T[] tempArray = new T[capacity];
-            // Loop through array and assign values
             for (int i = 0; i < (count); i++)
             {
                 tempArray[i] = theArray[i];
@@ -107,7 +106,7 @@ namespace CustomListClass
         {
             for (int i = 0; i < count; i++)
             {
-                if (Compare(itemToRemove, theArray[i]))
+                if (theArray[i].Equals(itemToRemove))
                 {
                     return true;
                 }
@@ -119,7 +118,7 @@ namespace CustomListClass
             int itemIndex = 0;
             for (int i = 0; i < count; i++)
             {
-                if (Compare(itemToRemove, theArray[i]))
+                if (theArray[i].Equals(itemToRemove))
                 {
                     itemIndex = i;
                     break;
@@ -128,7 +127,7 @@ namespace CustomListClass
             return itemIndex;
         }
 
-        private void CreateNewArray(int itemIndex)
+        private void CreateNewArrayForRemove(int itemIndex)
         {
             T[] tempArray = new T[capacity];
             for (int i = 0; i < count; i++)

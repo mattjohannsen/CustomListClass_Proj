@@ -34,6 +34,7 @@ namespace CustomListClass
             Console.ReadLine();
 
             List<int> numbers = new List<int>();
+            numbers.ToString();
             //numbers.Add(2);
             //numbers.Add(4);
             //numbers.Add(6);

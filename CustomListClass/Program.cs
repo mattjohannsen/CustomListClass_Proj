@@ -13,12 +13,12 @@ namespace CustomListClass
             CustomList<int> customList = new CustomList<int>();
             int intCheck1 = customList.Count;
             customList.Add(4);
-            //int intCheck2 = customList.Count;
-            //customList.Add(3);
-            //int intCheck3 = customList.Count;
-            //customList.Add(5);
-            //int intCheck4 = customList.Capacity;
-            //customList.Add(1);
+            int intCheck2 = customList.Count;
+            customList.Add(3);
+            int intCheck3 = customList.Count;
+            customList.Add(5);
+            int intCheck4 = customList.Capacity;
+            customList.Add(1);
             //customList.Add(11);
             int capacityVariable = customList.Capacity;
             Console.ReadLine();

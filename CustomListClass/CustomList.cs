@@ -37,6 +37,10 @@ namespace CustomListClass
             {
                 return capacity;
             }
+            set
+            {
+                capacity = value;
+            }
         }
         //constructor  
         public CustomList()
@@ -45,10 +49,10 @@ namespace CustomListClass
             capacity = 4;
         }
         //Overloading method for setting up new Array with different Max capacity
-        //public CustomList(int length)
-        //{
-        //    theArray = new T[length];
-        //}
+        public CustomList(int length)
+        {
+            theArray = new T[length];
+        }
 
 
         public void Add(T itemToAdd)
@@ -75,6 +79,7 @@ namespace CustomListClass
             {
                 tempArray[i] = theArray[i];
             }
+            capacity = newCount;
             theArray = tempArray;
         }
 

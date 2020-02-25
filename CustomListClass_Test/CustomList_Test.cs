@@ -20,20 +20,7 @@ namespace CustomListClass_Test
             //Assert
             Assert.AreEqual(expected, customList.Count);
         }
-        //[TestMethod]
-        //public void Remove_OneValueToList_CountDecrement()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int expected = 0;
 
-        //    //Act
-        //    customList.Add(7);
-        //    customList.Remove(7);
-
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Count);
-        //}
         [TestMethod]
         public void Add_OneValueToList_ExistsAtIndex0()
         {
@@ -49,21 +36,22 @@ namespace CustomListClass_Test
             //Assert
             Assert.AreEqual(expected, theArray[0]);
         }
-        //public void Add_TwoValuesToList_ListCountEquals2()
-        //{
-        //    //Arrange
-        //    CustomList<int> customList = new CustomList<int>();
-        //    int expected = 2;
-        //    int numberOne = 4;
-        //    int numberTwo = 3;
+        [TestMethod]
+        public void Add_TwoValuesToList_ListCountEquals2()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int expected = 2;
+            int numberOne = 4;
+            int numberTwo = 3;
 
-        //    //Act
-        //    customList.Add(numberOne);
-        //    customList.Add(numberTwo);
+            //Act
+            customList.Add(numberOne);
+            customList.Add(numberTwo);
 
-        //    //Assert
-        //    Assert.AreEqual(expected, customList.Count);
-        //}
+            //Assert
+            Assert.AreEqual(expected, customList.Count);
+        }
         //public void Add_TwoValuesToList_2ndValueGoesInAtIndex1()
         //{
         //    //Arrange
@@ -286,6 +274,20 @@ namespace CustomListClass_Test
         //    customList.Add(numberThree);
         //    customList.Add(numberFour);
         //    customList.Add(numberFive);
+
+        //    //Assert
+        //    Assert.AreEqual(expected, customList.Count);
+        //}
+        //[TestMethod]
+        //public void Remove_OneValueToList_CountDecrement()
+        //{
+        //    //Arrange
+        //    CustomList<int> customList = new CustomList<int>();
+        //    int expected = 0;
+
+        //    //Act
+        //    customList.Add(7);
+        //    customList.Remove(7);
 
         //    //Assert
         //    Assert.AreEqual(expected, customList.Count);

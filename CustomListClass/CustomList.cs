@@ -31,8 +31,13 @@ namespace CustomListClass
             }
         }
         private int capacity;
-        public int Capacity { get; private set; }
-
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+        }
         //constructor  
         public CustomList()
         {

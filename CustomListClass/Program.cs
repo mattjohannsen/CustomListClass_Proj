@@ -11,11 +11,14 @@ namespace CustomListClass
         static void Main(string[] args)
         {
             CustomList<int> customList = new CustomList<int>();
-            customList.Add(4);
+            int intCheck1 = customList.Count;
+            customList.Add(3);
+            int intCheck2 = customList.Count;
             customList.Add(7);
+            int intCheck3 = customList.Count;
             Console.ReadLine();
 
-            //List<int> numbers = new List<int>();
+            List<int> numbers = new List<int>();
             //numbers.Add(2);
             //numbers.Add(4);
             //numbers.Add(6);

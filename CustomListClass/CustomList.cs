@@ -57,35 +57,15 @@ namespace CustomListClass
         //}
         public void Remove(T itemToRemove)
         {
-            int itemIndex=0;
-            //Loop through values and find where the item exists in Array
-            for (int i = 0; i < count; i++)
+            int itemIndex = 0;
+
+            bool isItemFound = IsItemFound(itemToRemove);
+
+            if (isItemFound == true)
             {
-                if (Compare(itemToRemove, theArray[i]))
-                {
-                    itemIndex = i;
-                    break;
-                }
-                else
-                {
-                    //The value isn't found
-                    itemIndex = 0;
-                }
+                itemIndex = GetIndexOfItemToRemove(itemToRemove);
+                CreateNewArray(itemIndex);
             }
-            T[] tempArray = new T[capacity];
-            for (int i = 0; i < count; i++)
-            {
-                if (i < itemIndex)
-                {
-                    tempArray[i] = theArray[i];
-                }
-                else
-                {
-                    tempArray[i] = theArray[i+1];
-                }
-            }
-            count--;
-            theArray = tempArray;
         }
         public bool Compare(T firstValue, T secondValue)
         {
@@ -123,6 +103,47 @@ namespace CustomListClass
             }
             theArray = tempArray;
         }
+        private bool IsItemFound(T itemToRemove)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (Compare(itemToRemove, theArray[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private int GetIndexOfItemToRemove(T itemToRemove)
+        {
+            int itemIndex = 0;
+            for (int i = 0; i < count; i++)
+            {
+                if (Compare(itemToRemove, theArray[i]))
+                {
+                    itemIndex = i;
+                    break;
+                }
+            }
+            return itemIndex;
+        }
 
+        private void CreateNewArray(int itemIndex)
+        {
+            T[] tempArray = new T[capacity];
+            for (int i = 0; i < count; i++)
+            {
+                if (i < itemIndex)
+                {
+                    tempArray[i] = theArray[i];
+                }
+                else
+                {
+                    tempArray[i] = theArray[i + 1];
+                }
+            }
+            count--;
+            theArray = tempArray;
+        }
     }
 }

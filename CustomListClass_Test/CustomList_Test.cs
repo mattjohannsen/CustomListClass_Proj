@@ -28,8 +28,9 @@ namespace CustomListClass_Test
             //Assert
             Assert.AreEqual(expected, customList3.ToString());
         }
+
         [TestMethod]
-        public void MinusOperator_OneStringListMinusAnother_ReturnStringofNewList()
+        public void MinusOperator_OneListWithRepeatedValue_ReturnListwithAllRepeatsRemoved()
         {
             //Arrange
             CustomList<string> customList1 = new CustomList<string>();
@@ -38,14 +39,17 @@ namespace CustomListClass_Test
 
             //Act
             customList1.Add("cat");
+            customList1.Add("cat");
+            customList1.Add("cat");
+            customList1.Add("cat");
+            customList1.Add("cat");
             customList1.Add("dog");
             customList1.Add("cat");
             customList1.Add("fox");
             customList2.Add("cat");
             customList2.Add("bat");
             customList2.Add("hat");
-            CustomList<int> customList3 = new CustomList<int>();
-            customList3 = customList1 - customList2;
+            CustomList<string> customList3 = customList1 - customList2;
 
             //Assert
             Assert.AreEqual(expected, customList3.ToString());
@@ -86,7 +90,7 @@ namespace CustomListClass_Test
             customList2.Add("cat");
             customList2.Add("bat");
             customList2.Add("fox");
-            CustomList<int> customList3 = new CustomList<int>();
+            CustomList<string> customList3 = new CustomList<string>();
             customList3 = customList1 - customList2;
 
             //Assert

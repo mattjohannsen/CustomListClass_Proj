@@ -117,6 +117,7 @@ namespace CustomListClass
         public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
         {
             T[] itemsToSubtractArray = new T[listOne.capacity];
+            CustomList<T> customList3 = new CustomList<T>();
             //Loop through 2nd list and see if any of the values are in the first list
             for (int i = 0; i < listTwo.Count; i++)
             {
@@ -133,7 +134,8 @@ namespace CustomListClass
             {
                 listOne.Remove(itemsToSubtractArray[i]);
             }
-            return listOne;
+            customList3 = listOne;
+            return customList3;
 
         }
         public void Add(T itemToAdd)

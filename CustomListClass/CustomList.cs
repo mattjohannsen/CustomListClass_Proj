@@ -50,26 +50,16 @@ namespace CustomListClass
 
         }
         //Overloading method for setting up new Array with different Max capacity
-        //public CustomList(int length)
+        //public CustomList(int inputCapacity, int inputCount, T[] inputArray)
         //{
-        //    capacity = length;
+        //    capacity = inputCapacity;
+        //    count = inputCount;
         //    theArray = new T[capacity];
         //}
+
         public override string ToString()
         {
             string returnString = "";
-            //for (int i = 0; i < count; i++)
-            //{
-            //    if (i == 0)
-            //    {
-            //        returnString = theArray[i].ToString();
-            //    }
-            //    else
-            //    {
-            //        returnString = returnString + theArray[i].ToString();
-            //    }
-            //}
-            //return returnString;
             //BELOW IS THE START OF PERFECT CODE
             //string returnString = "";
             //for (int i = 0; i < count; i++)
@@ -81,7 +71,6 @@ namespace CustomListClass
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < count; i++)
             {
-
                 builder.Append(theArray[i].ToString());
                 returnString = builder.ToString();
             }
@@ -109,6 +98,54 @@ namespace CustomListClass
         //    {
         //        return false;
         //    }
+        //}
+        public static CustomList<T> operator +(CustomList<T> listToAdd1, CustomList<T> listToAdd2)
+        {
+            //int arrayCount = listToAdd1.Count + listToAdd2.Count;
+            //int newCapacity = GetMaxCapacity(arrayCount);
+            T[] tempArray = new T[listToAdd1.capacity];
+            CustomList<T> customList3 = new CustomList<T>();
+            for (int i = 0; i < listToAdd1.Count; i++)
+            {
+                customList3.theArray[i] = listToAdd1[i];
+                customList3.count++;
+                if (customList3.capacity == customList3.count)
+                {
+                    //We will need to create a new array
+                    customList3.capacity = (customList3.capacity * 2);
+                    T[] newMaxCapArray = new T[customList3.capacity];
+                    for (int j = 0; j < (customList3.count); j++)
+                    {
+                        newMaxCapArray[j] = customList3.theArray[j];
+                    }
+                    customList3.theArray = newMaxCapArray;
+                }
+            }
+            for (int i = 0; i < listToAdd2.Count; i++)
+            {
+                customList3.theArray[i + customList3.count] = listToAdd2[i];
+                customList3.count++;
+                if (customList3.capacity == customList3.count)
+                {
+                    //We will need to create a new array
+                    customList3.capacity = (customList3.capacity * 2);
+                    T[] newMaxCapArray = new T[customList3.capacity];
+                    for (int j = 0; j < (customList3.count); j++)
+                    {
+                        newMaxCapArray[j] = customList3.theArray[j];
+                    }
+                    customList3.theArray = newMaxCapArray;
+                }
+            }
+
+            return customList3;
+        }
+        //private int GetMaxCapacity(int inputCount1, int inputCount2)
+        //{
+        //    double dividedby4 = ((inputCount1 + inputCount2) / 4);
+        //    double capacityFactor = (((dividedby4 / 4) + 9) / 10);
+        //    int newCapacity = (Convert.ToInt32(capacityFactor)*4);
+        //    return newCapacity;
         //}
         public void Add(T itemToAdd)
         {

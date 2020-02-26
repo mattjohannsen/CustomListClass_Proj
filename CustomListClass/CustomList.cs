@@ -107,35 +107,37 @@ namespace CustomListClass
             CustomList<T> customList3 = new CustomList<T>();
             for (int i = 0; i < listToAdd1.Count; i++)
             {
-                customList3.theArray[i] = listToAdd1[i];
-                customList3.count++;
-                if (customList3.capacity == customList3.count)
-                {
-                    //We will need to create a new array
-                    customList3.capacity = (customList3.capacity * 2);
-                    T[] newMaxCapArray = new T[customList3.capacity];
-                    for (int j = 0; j < (customList3.count); j++)
-                    {
-                        newMaxCapArray[j] = customList3.theArray[j];
-                    }
-                    customList3.theArray = newMaxCapArray;
-                }
+                customList3.Add(customList3, listToAdd1[i]);
+                //customList3.theArray[i] = listToAdd1[i];
+                //customList3.count++;
+                //if (customList3.capacity == customList3.count)
+                //{
+                //    //We will need to create a new array
+                //    customList3.capacity = (customList3.capacity * 2);
+                //    T[] newMaxCapArray = new T[customList3.capacity];
+                //    for (int j = 0; j < (customList3.count); j++)
+                //    {
+                //        newMaxCapArray[j] = customList3.theArray[j];
+                //    }
+                //    customList3.theArray = newMaxCapArray;
+                //}
             }
             for (int i = 0; i < listToAdd2.Count; i++)
             {
-                customList3.theArray[i + customList3.count] = listToAdd2[i];
-                customList3.count++;
-                if (customList3.capacity == customList3.count)
-                {
-                    //We will need to create a new array
-                    customList3.capacity = (customList3.capacity * 2);
-                    T[] newMaxCapArray = new T[customList3.capacity];
-                    for (int j = 0; j < (customList3.count); j++)
-                    {
-                        newMaxCapArray[j] = customList3.theArray[j];
-                    }
-                    customList3.theArray = newMaxCapArray;
-                }
+                customList3.Add(customList3, listToAdd2[i]);
+                //customList3.theArray[i + customList3.count] = listToAdd2[i];
+                //customList3.count++;
+                //if (customList3.capacity == customList3.count)
+                //{
+                //    //We will need to create a new array
+                //    customList3.capacity = (customList3.capacity * 2);
+                //    T[] newMaxCapArray = new T[customList3.capacity];
+                //    for (int j = 0; j < (customList3.count); j++)
+                //    {
+                //        newMaxCapArray[j] = customList3.theArray[j];
+                //    }
+                //    customList3.theArray = newMaxCapArray;
+                //}
             }
 
             return customList3;
@@ -161,6 +163,20 @@ namespace CustomListClass
             //check to make sure it persists CHECK!
             //count == maxcapacity, we need to increase capacity and copy - CHECK!
         }
+        public void Add(CustomList<T> inputList, T itemToAdd)
+        {
+            inputList.theArray[count] = itemToAdd;
+            count++;
+            if (capacity == count)
+            {
+                //We will need to create a new array
+                IncreaseMaxCapacity();
+            }
+            //increment count - CHECK!!!
+            //item needs to land at next available index -CHECK!
+            //check to make sure it persists CHECK!
+            //count == maxcapacity, we need to increase capacity and copy - CHECK!
+        }
         private void IncreaseMaxCapacity()
         {
             capacity = (capacity * 2);
@@ -170,6 +186,16 @@ namespace CustomListClass
                 tempArray[i] = theArray[i];
             }
             theArray = tempArray;
+        }
+        private void IncreaseMaxCapacity(CustomList<T> inputList)
+        {
+            inputList.capacity = (capacity * 2);
+            T[] tempArray = new T[capacity];
+            for (int i = 0; i < (count); i++)
+            {
+                tempArray[i] = inputList.theArray[i];
+            }
+            inputList.theArray = tempArray;
         }
         private bool IsItemFound(T itemToRemove)
         {

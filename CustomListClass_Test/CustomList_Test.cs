@@ -23,8 +23,7 @@ namespace CustomListClass_Test
             customList2.Add(2);
             customList2.Add(1);
             customList2.Add(6);
-            CustomList<int> customList3 = new CustomList<int>();
-            customList3 = customList1 - customList2;
+            CustomList<int> customList3 = customList1 - customList2;
 
             //Assert
             Assert.AreEqual(expected, customList3.ToString());
@@ -40,6 +39,7 @@ namespace CustomListClass_Test
             //Act
             customList1.Add("cat");
             customList1.Add("dog");
+            customList1.Add("cat");
             customList1.Add("fox");
             customList2.Add("cat");
             customList2.Add("bat");

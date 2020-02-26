@@ -20,7 +20,7 @@ namespace CustomListClass
             customList2.Add(2);
             customList2.Add(1);
             customList2.Add(6);
-            customList3 = (customList1 + customList2);
+            customList3 = (customList1 - customList2);
 
             //customList.ToString();
             //customList.Remove(3);

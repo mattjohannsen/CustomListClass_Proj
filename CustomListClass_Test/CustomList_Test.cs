@@ -7,9 +7,115 @@ namespace CustomListClass_Test
     [TestClass]
     public class CustomList_Test
     {
+        //BELOW ARE MY -OPERATOR VARIABLES
+        [TestMethod]
+        public void MinusOperator_OneIntListMinusAnother_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            string expected = "35";
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(1);
+            customList2.Add(6);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 - customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
+        public void MinusOperator_OneStringListMinusAnother_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            string expected = "dogfox";
+
+            //Act
+            customList1.Add("cat");
+            customList1.Add("dog");
+            customList1.Add("fox");
+            customList2.Add("cat");
+            customList2.Add("bat");
+            customList2.Add("hat");
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 - customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
+        public void MinusOperator_OneIntListMinusAnother_Retrun2Values()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            int expected = 2;
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(1);
+            customList2.Add(6);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 - customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.Count);
+        }
+        [TestMethod]
+        public void MinusOperator_OneStringListMinusAnother_ReturnValueCount1()
+        {
+            //Arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            int expected = 1;
+
+            //Act
+            customList1.Add("cat");
+            customList1.Add("dog");
+            customList1.Add("fox");
+            customList2.Add("cat");
+            customList2.Add("bat");
+            customList2.Add("fox");
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 - customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.Count);
+        }
+        [TestMethod]
+        public void MinusOperator_OneIntListMinusAnother_ReturnsOriginalValues()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            string expected = "135";
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = customList1 - customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
         //BELOW ARE MY +OPERATOR VARIABLES
         [TestMethod]
-        public void Two3IntListsAdded_Index0Returns1stValueofOldList()
+        public void PlusOperator_IntListsAdded_Index0Returns1stValueofOldList()
         {
             //Arrange
             CustomList<int> customList1 = new CustomList<int>();
@@ -30,7 +136,7 @@ namespace CustomListClass_Test
             Assert.AreEqual(expected, customList3.ToString());
         }
         [TestMethod]
-        public void Two3IntListsAdded_Index3Returns1stValueofOldList()
+        public void PlusOperator_IntListsAdded_Index3Returns1stValueofOldList()
         {
             //Arrange
             CustomList<int> customList1 = new CustomList<int>();
@@ -51,7 +157,7 @@ namespace CustomListClass_Test
             Assert.AreEqual(expected, customList3[3]);
         }
         [TestMethod]
-        public void Two3IntListsAdded_NewListCountReturns6()
+        public void PlusOperator_Two3IntListsAdded_NewListCountReturns6()
         {
             //Arrange
             CustomList<int> customList1 = new CustomList<int>();
@@ -72,7 +178,7 @@ namespace CustomListClass_Test
             Assert.AreEqual(expected, customList3.Count);
         }
         [TestMethod]
-        public void Two4IntListsAdded_MaxCapacityReturn8()
+        public void PlusOperator_Two4IntListsAdded_MaxCapacityReturn8()
         {
             //Arrange
             CustomList<int> customList1 = new CustomList<int>();
@@ -93,7 +199,7 @@ namespace CustomListClass_Test
             Assert.AreEqual(expected, customList3.Capacity);
         }
         [TestMethod]
-        public void Two4IntListsAdded_MaxCapacityReturn16()
+        public void PlusOperator_Two4IntListsAdded_MaxCapacityReturn16()
         {
             //Arrange
             CustomList<int> customList1 = new CustomList<int>();

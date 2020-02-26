@@ -18,7 +18,7 @@ namespace CustomListClass
             customList1.Add(3);
             customList1.Add(5);
             customList2.Add(2);
-            customList2.Add(4);
+            customList2.Add(1);
             customList2.Add(6);
             customList3 = (customList1 + customList2);
 

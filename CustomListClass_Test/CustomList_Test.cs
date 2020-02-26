@@ -9,6 +9,34 @@ namespace CustomListClass_Test
     {
         //BELOW ARE MY -OPERATOR VARIABLES
         [TestMethod]
+        public void MinusOperator_2ndListLargerThanFirst_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            string expected = "2";
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(2);
+            customList1.Add(3);
+            customList2.Add(1);
+            customList2.Add(1);
+            customList2.Add(1);
+            customList2.Add(1);
+            customList2.Add(1);
+            customList2.Add(1);
+            customList2.Add(3);
+            customList2.Add(3);
+            customList2.Add(3);
+            customList2.Add(3);
+            customList2.Add(3);
+            CustomList<int> customList3 = customList1 - customList2;
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
         public void MinusOperator_OneIntListMinusAnother_ReturnStringofNewList()
         {
             //Arrange
@@ -29,6 +57,7 @@ namespace CustomListClass_Test
             Assert.AreEqual(expected, customList3.ToString());
         }
 
+
         [TestMethod]
         public void MinusOperator_OneListWithRepeatedValue_ReturnListwithAllRepeatsRemoved()
         {
@@ -39,7 +68,7 @@ namespace CustomListClass_Test
 
             //Act
             customList1.Add("cat");
-            customList1.Add("cat");
+            customList1.Add("bat");
             customList1.Add("cat");
             customList1.Add("cat");
             customList1.Add("cat");

@@ -101,67 +101,27 @@ namespace CustomListClass
         //}
         public static CustomList<T> operator +(CustomList<T> listToAdd1, CustomList<T> listToAdd2)
         {
-            //int arrayCount = listToAdd1.Count + listToAdd2.Count;
-            //int newCapacity = GetMaxCapacity(arrayCount);
             T[] tempArray = new T[listToAdd1.capacity];
             CustomList<T> customList3 = new CustomList<T>();
             for (int i = 0; i < listToAdd1.Count; i++)
             {
                 customList3.Add(customList3, listToAdd1[i]);
-                //customList3.theArray[i] = listToAdd1[i];
-                //customList3.count++;
-                //if (customList3.capacity == customList3.count)
-                //{
-                //    //We will need to create a new array
-                //    customList3.capacity = (customList3.capacity * 2);
-                //    T[] newMaxCapArray = new T[customList3.capacity];
-                //    for (int j = 0; j < (customList3.count); j++)
-                //    {
-                //        newMaxCapArray[j] = customList3.theArray[j];
-                //    }
-                //    customList3.theArray = newMaxCapArray;
-                //}
             }
             for (int i = 0; i < listToAdd2.Count; i++)
             {
                 customList3.Add(customList3, listToAdd2[i]);
-                //customList3.theArray[i + customList3.count] = listToAdd2[i];
-                //customList3.count++;
-                //if (customList3.capacity == customList3.count)
-                //{
-                //    //We will need to create a new array
-                //    customList3.capacity = (customList3.capacity * 2);
-                //    T[] newMaxCapArray = new T[customList3.capacity];
-                //    for (int j = 0; j < (customList3.count); j++)
-                //    {
-                //        newMaxCapArray[j] = customList3.theArray[j];
-                //    }
-                //    customList3.theArray = newMaxCapArray;
-                //}
             }
 
             return customList3;
         }
-        //private int GetMaxCapacity(int inputCount1, int inputCount2)
-        //{
-        //    double dividedby4 = ((inputCount1 + inputCount2) / 4);
-        //    double capacityFactor = (((dividedby4 / 4) + 9) / 10);
-        //    int newCapacity = (Convert.ToInt32(capacityFactor)*4);
-        //    return newCapacity;
-        //}
         public void Add(T itemToAdd)
         {
             theArray[count] = itemToAdd;
             count++;
             if (capacity == count)
             {
-                //We will need to create a new array
                 IncreaseMaxCapacity();
             }
-            //increment count - CHECK!!!
-            //item needs to land at next available index -CHECK!
-            //check to make sure it persists CHECK!
-            //count == maxcapacity, we need to increase capacity and copy - CHECK!
         }
         public void Add(CustomList<T> inputList, T itemToAdd)
         {
@@ -169,13 +129,8 @@ namespace CustomListClass
             count++;
             if (capacity == count)
             {
-                //We will need to create a new array
                 IncreaseMaxCapacity();
             }
-            //increment count - CHECK!!!
-            //item needs to land at next available index -CHECK!
-            //check to make sure it persists CHECK!
-            //count == maxcapacity, we need to increase capacity and copy - CHECK!
         }
         private void IncreaseMaxCapacity()
         {

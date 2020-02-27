@@ -61,7 +61,7 @@ namespace CustomListClass
         public override string ToString()
         {
             string returnString = "";
-            //EXAMPLE OF NON STRING BUILDER CODE BELOW
+            //EXAMPLE OF NON STRINGBUILDER CODE BELOW
             //string returnString = "";
             //for (int i = 0; i < count; i++)
             //{
@@ -142,11 +142,11 @@ namespace CustomListClass
                 }
             }
             //Loop through temp array of removals and remove from first array
-
             for (int i = 0; i < itemsToSubtract.Count; i++)
             {
                 customList1.Remove(itemsToSubtract[i]);
             }
+            //Return new list
             customList3 = customList1;
             return customList3;
 
@@ -178,16 +178,6 @@ namespace CustomListClass
                 tempArray[i] = theArray[i];
             }
             theArray = tempArray;
-        }
-        private void IncreaseMaxCapacity(CustomList<T> inputList)
-        {
-            inputList.capacity = (capacity * 2);
-            T[] tempArray = new T[capacity];
-            for (int i = 0; i < (count); i++)
-            {
-                tempArray[i] = inputList.theArray[i];
-            }
-            inputList.theArray = tempArray;
         }
         private bool IsItemFound(T itemToRemove)
         {

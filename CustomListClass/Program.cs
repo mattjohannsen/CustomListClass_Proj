@@ -14,18 +14,12 @@ namespace CustomListClass
             CustomList<int> customList1 = new CustomList<int>();
             CustomList<int> customList2 = new CustomList<int>();
             CustomList<int> customList3 = new CustomList<int>();
-            customList1.Add(9);
-            customList1.Add(2);
             customList2.Add(1);
-            customList2.Add(8);
-            customList2.Add(1);
+            customList2.Add(2);
             customList2.Add(3);
-            customList2.Add(3);
-            customList2.Add(0);
-            customList2.Add(8);
-            customList2.Add(0);
-            customList2.Add(0);
             customList2.Add(4);
+            customList2.Add(5);
+            customList2.Add(6);
             customList3 = customList1.Zip(customList2);
             //customList3 = (customList1 - customList2);
 

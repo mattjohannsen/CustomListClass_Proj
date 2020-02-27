@@ -105,18 +105,21 @@ namespace CustomListClass
         }
         public CustomList<T> Zip(CustomList<T> listToZip)
         {
-            int loopSize = (Count + listToZip.Count-1);
+            //int loopSize = (Count + listToZip.Count);
+            int loopSize = Math.Max(Count, listToZip.Count);
             CustomList<T> customList3 = new CustomList<T>();
             for (int i = 0; i < loopSize; i++)
             {
-                if (i <= (Count - 1)) 
-                {
-                    customList3.Add(theArray[i]);
-                }
-                if (i <= listToZip.Count-1)
-                {
-                    customList3.Add(listToZip.theArray[i]);
-                }
+
+                    if (i < (Count))
+                    {
+                        customList3.Add(theArray[i]);
+                    }
+                    if (i < listToZip.Count)
+                    {
+                        customList3.Add(listToZip.theArray[i]);
+                    }
+
             }
             return customList3;
         }

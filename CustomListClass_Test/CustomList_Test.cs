@@ -9,6 +9,46 @@ namespace CustomListClass_Test
     {
         //BELOW ARE MY ZIP LIST METHOD UNIT TESTS
         [TestMethod]
+        public void Zip_TwoIntLists2ndListZeroAdds_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            string expected = "123456";
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(2);
+            customList1.Add(3);
+            customList1.Add(4);
+            customList1.Add(5);
+            customList1.Add(6);
+            CustomList<int> customList3 = customList1.Zip(customList2);
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
+        public void Zip_TwoIntListsOneZero_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            string expected = "123456";
+
+            //Act
+            customList2.Add(1);
+            customList2.Add(2);
+            customList2.Add(3);
+            customList2.Add(4);
+            customList2.Add(5);
+            customList2.Add(6);
+            CustomList<int> customList3 = customList1.Zip(customList2);
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
         public void Zip_TwoIntListsOneVeryShort_ReturnStringofNewList()
         {
             //Arrange

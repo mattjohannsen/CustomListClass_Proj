@@ -7,30 +7,138 @@ namespace CustomListClass_Test
     [TestClass]
     public class CustomList_Test
     {
-        //BELOW ARE MY -OPERATOR VARIABLES
+        //BELOW ARE MY ZIP LIST METHOD UNIT TESTS
+        [TestMethod]
+        public void Zip_Two3IntLists_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            string expected = "123456";
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            CustomList<int> customList3 = Zip(customList1, customList2);
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
+        public void Zip_Two5IntLists_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            string expected = "2813308004";
+
+            //Act
+            customList1.Add(2);
+            customList1.Add(1);
+            customList1.Add(3);
+            customList1.Add(8);
+            customList1.Add(0);
+            customList2.Add(8);
+            customList2.Add(3);
+            customList2.Add(0);
+            customList2.Add(8);
+            customList2.Add(4);
+            CustomList<int> customList3 = Zip(customList1, customList2);
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
+        public void Zip_Two5StringLists_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            string expected = "hotdoghotdoghotdoghotdoghotdog";
+
+            //Act
+            customList1.Add("hot");
+            customList1.Add("hot");
+            customList1.Add("hot");
+            customList1.Add("hot");
+            customList1.Add("hot");
+            customList2.Add("dog");
+            customList2.Add("dog");
+            customList2.Add("dog");
+            customList2.Add("dog");
+            customList2.Add("dog");
+            CustomList<int> customList3 = Zip(customList1, customList2);
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
+        public void Zip_TwoDiffSizeIntLists_2ndListLarger_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            string expected = "10101000";
+
+            //Act
+            customList1.Add(1);
+            customList1.Add(1);
+            customList1.Add(1);
+            customList2.Add(0);
+            customList2.Add(0);
+            customList2.Add(0);
+            customList2.Add(0);
+            customList2.Add(0);
+            CustomList<int> customList3 = Zip(customList1, customList2);
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        [TestMethod]
+        public void Zip_TwoDifStringLists_1stListLarger_ReturnStringofNewList()
+        {
+            //Arrange
+            CustomList<string> customList1 = new CustomList<string>();
+            CustomList<string> customList2 = new CustomList<string>();
+            string expected = "standupsitdownfightfightfight";
+
+            //Act
+            customList1.Add("stand");
+            customList1.Add("sit");
+            customList1.Add("fight");
+            customList1.Add("fight");
+            customList1.Add("fight");
+            customList2.Add("up");
+            customList2.Add("down");
+            CustomList<int> customList3 = Zip(customList1, customList2);
+
+            //Assert
+            Assert.AreEqual(expected, customList3.ToString());
+        }
+        //BELOW ARE MY -OPERATOR UNIT TESTS
         [TestMethod]
         public void MinusOperator_2ndListLargerThanFirst_ReturnStringofNewList()
         {
             //Arrange
             CustomList<int> customList1 = new CustomList<int>();
             CustomList<int> customList2 = new CustomList<int>();
-            string expected = "2";
+            string expected = "2813308004";
 
             //Act
-            customList1.Add(1);
             customList1.Add(2);
+            customList1.Add(1);
             customList1.Add(3);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(1);
+            customList1.Add(8);
+            customList1.Add(0);
+            customList2.Add(8);
             customList2.Add(3);
-            customList2.Add(3);
-            customList2.Add(3);
-            customList2.Add(3);
-            customList2.Add(3);
+            customList2.Add(0);
+            customList2.Add(0);
+            customList2.Add(4);
             CustomList<int> customList3 = customList1 - customList2;
 
             //Assert

@@ -52,18 +52,11 @@ namespace CustomListClass
         }
         public IEnumerator GetEnumerator()
         {
-            for (int i = 0; i < theArray.Length; i++)
+            for (int i = 0; i < Count; i++)
             {
                 yield return theArray[i];
             }
         }
-        //Overloading method for setting up new Array with different Max capacity
-        //public CustomList(int inputCapacity, int inputCount, T[] inputArray)
-        //{
-        //    capacity = inputCapacity;
-        //    count = inputCount;
-        //    theArray = new T[capacity];
-        //}
 
         public override string ToString()
         {
@@ -113,12 +106,12 @@ namespace CustomListClass
         }
         public CustomList<T> Zip(CustomList<T> listToZip)
         {
-            int loopSize = (theArray.Length + listToZip.Count);
+            int loopSize = (Count + listToZip.Count-1);
             CustomList<T> customList3 = new CustomList<T>();
             //This is the loop that creates the new customList3 by zipping 2 other custom lists.
             for (int i = 0; i < loopSize; i++)
             {
-                if (i <= (theArray.Length-1)) 
+                if (i <= (Count - 1)) 
                 {
                     customList3.Add(theArray[i]);
                 }

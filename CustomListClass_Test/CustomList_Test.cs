@@ -126,18 +126,18 @@ namespace CustomListClass_Test
             //Arrange
             CustomList<int> customList1 = new CustomList<int>();
             CustomList<int> customList2 = new CustomList<int>();
-            string expected = "2813308004";
+            string expected = "2";
 
             //Act
-            customList1.Add(2);
-            customList1.Add(8);
             customList1.Add(1);
+            customList1.Add(2);
             customList1.Add(3);
-            customList1.Add(3);
-            customList2.Add(0);
-            customList2.Add(8);
-            customList2.Add(0);
-            customList2.Add(0);
+            customList1.Add(1);
+            customList1.Add(1);
+            customList2.Add(1);
+            customList2.Add(3);
+            customList2.Add(4);
+            customList2.Add(4);
             customList2.Add(4);
             CustomList<int> customList3 = customList1 - customList2;
 

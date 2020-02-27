@@ -61,14 +61,13 @@ namespace CustomListClass
         public override string ToString()
         {
             string returnString = "";
-            //BELOW IS THE START OF PERFECT CODE
+            //EXAMPLE OF NON STRING BUILDER CODE BELOW
             //string returnString = "";
             //for (int i = 0; i < count; i++)
             //{
             //    returnString += theArray[i].ToString();
             //}
             //return returnString;
-            //ABOVE IS THE END OF PERFECT CODE
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < count; i++)
             {
@@ -108,7 +107,6 @@ namespace CustomListClass
         {
             int loopSize = (Count + listToZip.Count-1);
             CustomList<T> customList3 = new CustomList<T>();
-            //This is the loop that creates the new customList3 by zipping 2 other custom lists.
             for (int i = 0; i < loopSize; i++)
             {
                 if (i <= (Count - 1)) 
@@ -119,16 +117,6 @@ namespace CustomListClass
                 {
                     customList3.Add(listToZip.theArray[i]);
                 }
-                //if (i % 2 == 0) //This is an even numbered loop
-                //{
-                //    //customList3[i] = listToZip[i];
-                //    customList3.Add(theArray[i]);
-                //    customList3.Add(listToZip.theArray[i]);
-                //}
-                //else //This is an odd numbered loop
-                //{
-                //    customList3.Add(listToZip.theArray[i]);
-                //}
             }
             return customList3;
         }

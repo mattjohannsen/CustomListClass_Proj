@@ -15,20 +15,13 @@ namespace CustomListClass
             CustomList<int> customList2 = new CustomList<int>();
             CustomList<int> customList3 = new CustomList<int>();
             customList1.Add(1);
-            customList1.Add(2);
             customList1.Add(3);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(1);
-            customList2.Add(3);
-            customList2.Add(3);
-            customList2.Add(3);
-            customList2.Add(3);
-            customList2.Add(3);
-            customList3 = (customList1 - customList2);
+            customList1.Add(5);
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+            customList3 = customList1.Zip(customList2);
+            //customList3 = (customList1 - customList2);
 
             //customList.ToString();
             //customList.Remove(3);
@@ -47,6 +40,7 @@ namespace CustomListClass
             //int intCheck2 = customList.Count;
             //int intCheck3 = customList.Count;
             //int intCheck4 = customList.Capacity;
+            Console.WriteLine("The program has run");
             Console.ReadLine();
 
             List<int> numbers = new List<int>();

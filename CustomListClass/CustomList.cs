@@ -56,7 +56,7 @@ namespace CustomListClass
         //    count = inputCount;
         //    theArray = new T[capacity];
         //}
-
+        
         public override string ToString()
         {
             string returnString = "";
@@ -101,6 +101,34 @@ namespace CustomListClass
                 customList3.Add(customList3, listToAdd2[i]);
             }
 
+            return customList3;
+        }
+        public CustomList<T> Zip(CustomList<T> listToZip)
+        {
+            int loopSize = (theArray.Length + listToZip.Count);
+            CustomList<T> customList3 = new CustomList<T>();
+            //This is the loop that creates the new customList3 by zipping 2 other custom lists.
+            for (int i = 0; i < loopSize; i++)
+            {
+                if (i <= (theArray.Length-1)) 
+                {
+                    customList3.Add(theArray[i]);
+                }
+                if (i <= listToZip.Count-1)
+                {
+                    customList3.Add(listToZip.theArray[i]);
+                }
+                //if (i % 2 == 0) //This is an even numbered loop
+                //{
+                //    //customList3[i] = listToZip[i];
+                //    customList3.Add(theArray[i]);
+                //    customList3.Add(listToZip.theArray[i]);
+                //}
+                //else //This is an odd numbered loop
+                //{
+                //    customList3.Add(listToZip.theArray[i]);
+                //}
+            }
             return customList3;
         }
         public static CustomList<T> operator -(CustomList<T> customList1, CustomList<T> customList2)

@@ -71,7 +71,7 @@ namespace CustomListClass_Test
             customList2.Add("dog");
             customList2.Add("dog");
             customList2.Add("dog");
-            CustomList<int> customList3 = customList1.Zip(customList2);
+            CustomList<string> customList3 = customList1.Zip(customList2);
 
             //Assert
             Assert.AreEqual(expected, customList3.ToString());
@@ -114,7 +114,7 @@ namespace CustomListClass_Test
             customList1.Add("fight");
             customList2.Add("up");
             customList2.Add("down");
-            CustomList<int> customList3 = customList1.Zip(customList2);
+            CustomList<string> customList3 = customList1.Zip(customList2);
 
             //Assert
             Assert.AreEqual(expected, customList3.ToString());
@@ -130,12 +130,12 @@ namespace CustomListClass_Test
 
             //Act
             customList1.Add(2);
+            customList1.Add(8);
             customList1.Add(1);
             customList1.Add(3);
-            customList1.Add(8);
-            customList1.Add(0);
+            customList1.Add(3);
+            customList2.Add(0);
             customList2.Add(8);
-            customList2.Add(3);
             customList2.Add(0);
             customList2.Add(0);
             customList2.Add(4);

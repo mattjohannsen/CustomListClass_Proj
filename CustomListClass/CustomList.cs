@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomListClass
 {
-    public class CustomList<T>
+    public class CustomList<T> :IEnumerable
     {
         //member variables
         private T[] theArray;
@@ -49,6 +50,13 @@ namespace CustomListClass
             theArray = new T[capacity];
 
         }
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < theArray.Length; i++)
+            {
+                yield return theArray[i];
+            }
+        }
         //Overloading method for setting up new Array with different Max capacity
         //public CustomList(int inputCapacity, int inputCount, T[] inputArray)
         //{
@@ -56,7 +64,7 @@ namespace CustomListClass
         //    count = inputCount;
         //    theArray = new T[capacity];
         //}
-        
+
         public override string ToString()
         {
             string returnString = "";
@@ -239,5 +247,6 @@ namespace CustomListClass
             count--;
             theArray = tempArray;
         }
+
     }
 }

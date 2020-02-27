@@ -88,17 +88,6 @@ namespace CustomListClass
                 CreateNewArrayForRemove(itemIndex);
             }
         }
-        //public bool Compare(T firstValue, T secondValue)
-        //{
-        //    if (firstValue.Equals(secondValue))
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
         public static CustomList<T> operator +(CustomList<T> listToAdd1, CustomList<T> listToAdd2)
         {
             T[] tempArray = new T[listToAdd1.capacity];

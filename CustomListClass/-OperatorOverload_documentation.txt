@@ -1,0 +1,44 @@
+- Operator Overload
+Allows the ability to subtract one collection of objects from another collection of objects.
+C#
+public static className <T> operator - (parameters)
+{
+//Code
+}
+Parameters
+These parameters are the object lists we are manipulating.  The first parameter is the list that you ultimately want.  The second parameter is the list of object you will be subtracting from the first list.
+Example: (CustomList<T> customList1, CustomList<T> customList2)
+Returns
+This method returns a list of objects.
+Syntax
+CustomList<int> customList3 = customList1 - customList2;
+
+Example:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CustomListClass
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CustomList<int> customList1 = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            customList1.Add(1);
+            customList1.Add(2);
+            customList1.Add(3);
+            customList2.Add(2);
+            customList2.Add(1);
+            customList2.Add(6);
+            CustomList<int> customList3 = new CustomList<int>();
+            customList3 = (customList1 - customList2);
+            Console.ReadLine();
+
+        }
+    }
+} 
+This example returns a new customList3 value of { 3, 5 }.
